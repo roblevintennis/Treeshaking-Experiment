@@ -1,0 +1,22 @@
+{
+  "name": "treeshaking",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "grep-code": "npm run build && cat bundle.js | grep -o 'A_VALUE_ES6\\|B_VALUE_ES6\\|C_VALUE_ES6\\|X_VAL_COMMONJS\\|Y_VAL_COMMONJS\\|Z_VAL_COMMONJS'",
+    "all": "yarn build && yarn grep-code"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.49",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.0.0-beta.49",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.0-beta.3",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1"
+  },
+  "author": "",
+  "license": "ISC"
+}
