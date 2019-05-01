@@ -29,6 +29,11 @@ inspect usage and only import those things actually being used.
 
 The results are obtained by simply _grep'ing_ the bundle for the tokens expected.
 
+## Findings
+
+It seems with Webpack + Babel 7, if you have a module that does `import * as Module`,
+the engine is smart enough to drop dead code from the bundle.
+
 ## Reference
 
 This is based off of an [experiment](https://github.com/sashee/treeshaking-test)
