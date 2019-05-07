@@ -1,4 +1,5 @@
-* yarn && yarn all
+* To run immediately:
+`git clone git@github.com:roblevintennis/Treeshaking-Experiment.git && cd Treeshaking-Experiment && yarn && yarn all`
 
 For this task we simply want to compare the following for modules that have named
 exports a,b,c (ES6 module) and x,y,z (CommonJS module) respectively.
@@ -31,8 +32,12 @@ The results are obtained by simply _grep'ing_ the bundle for the tokens expected
 
 ## Findings
 
-It seems with Webpack + Babel 7, if you have a module that does `import * as Module`,
+* It seems with Webpack + Babel 7, if you have a module that does `import * as Module`,
 the engine is smart enough to drop dead code from the bundle.
+* In ES6, if you do not use any of the methods or properties, regardless of import style, the code
+will not be included in the bundle.
+* CommonJS: Regardless of what you do, the whole file is always included in the resulting
+bundle.
 
 ## Reference
 
